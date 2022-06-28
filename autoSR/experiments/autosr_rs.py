@@ -46,7 +46,7 @@ if __name__ == "__main__":
         dataset_options.remove(args.dataset)
 
     auto_model = autoSR_RS(dataset_options,os.path.join(RESULTSDIR, "autosr","v1"),
-                           f"{args.id}_autosr_v1_{args.dataset}", "1",max_trials=args.trials, scale=SCALE,overwrite=False)
+                           f"{args.id}_autosr_v1_{args.dataset}", "1",max_trials=args.trials, scale=SCALE,overwrite=True)
     auto_model.fit(x=train_ds_arr["lr"], y=train_ds_arr["hr"], callbacks=[tensorboard_callback, tf.keras.callbacks.EarlyStopping(
         patience=10, min_delta=1e-4)], epochs=100, validation_data=(valid_ds_arr["lr"], valid_ds_arr["hr"]), verbose=2)
     results = np.asarray([auto_model.evaluate(

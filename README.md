@@ -38,7 +38,7 @@ Update config.sh file with your paths & run before running scripts:
 - PROJECTDIR is the path to the code folder
 
 # Example
-For example code, see autoSR/experiments/autosr.py:
+For example code, see autoSR/experiments/autosr_rs.py:
 
 Imports:
 ```
